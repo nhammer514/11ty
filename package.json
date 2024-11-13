@@ -12,9 +12,11 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "description": "",
   "dependencies": {
     "@11ty/eleventy": "^3.0.0",
-    "gh-pages": "^6.2.0"
-  }
+    "gh-pages": "^6.2.0",
+    "highlight.js": "^11.10.0",
+    "markdown-it": "^14.1.0"
+  },
+  "description": ""
 }

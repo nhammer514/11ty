@@ -1,0 +1,5 @@
+<ul>
+    {%- for note in collections.note -%}
+    <li><a href="{{ note.url }}" target="content">{{note.data.title}}</a></li>
+    {%- endfor -%}
+</ul>

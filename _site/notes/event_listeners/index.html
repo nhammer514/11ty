@@ -1,0 +1,43 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="../../css/style_notes.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.10.0/styles/tomorrow-night-bright.css">
+    </head>
+    <body>
+        <h2> Event Listeners </h2>
+        <p><strong>Event Listeners</strong> are functions that are listening for input ( or events ) coming from the HTML page.</p>
+<p>In the code below, we created an event listener.  When the event <code>DomContentLoaded</code> occurs (page is completely loaded), we will trigger the <code>init()</code> function.</p>
+<pre class="hljs"><code class="language-js"><span class="hljs-variable language_">window</span>.<span class="hljs-title function_">addEventListener</span>(<span class="hljs-string">&#x27;DOMContentLoaded&#x27;</span>,init,<span class="hljs-literal">false</span>);
+<span class="hljs-keyword">function</span> <span class="hljs-title function_">init</span>(<span class="hljs-params"></span>){
+    <span class="hljs-title function_">alert</span>(<span class="hljs-string">&quot;Hello world!&quot;</span>)
+};
+</code></pre>
+<p>Event Listeners can be used for a variety of different features. For instance, event listeners can be used for buttons from the page:</p>
+<pre class="hljs"><code class="language-js"><span class="hljs-variable language_">window</span>.<span class="hljs-title function_">addEventListener</span>(<span class="hljs-string">&#x27;DOMContentLoaded&#x27;</span>,init,<span class="hljs-literal">false</span>);
+<span class="hljs-keyword">function</span> <span class="hljs-title function_">init</span>(<span class="hljs-params"></span>){
+    <span class="hljs-keyword">const</span> exampleButton = <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">getElementById</span>(<span class="hljs-string">&#x27;testExample&#x27;</span>);
+    exampleButton.<span class="hljs-title function_">addEventListener</span>(<span class="hljs-string">&#x27;click&#x27;</span>,buttonClicked,<span class="hljs-literal">false</span>);
+}
+<span class="hljs-keyword">function</span> <span class="hljs-title function_">buttonClicked</span>(<span class="hljs-params"></span>){
+    <span class="hljs-title function_">alert</span>(<span class="hljs-string">&quot;You clicked me!&quot;</span>)
+}
+</code></pre>
+<p>Or as controls for a video game:</p>
+<pre class="hljs"><code class="language-js"><span class="hljs-keyword">const</span> keys = {
+  <span class="hljs-title class_">ArrowUp</span>: <span class="hljs-literal">false</span>,
+  <span class="hljs-title class_">ArrowDown</span>: <span class="hljs-literal">false</span>,
+  <span class="hljs-title class_">ArrowLeft</span>: <span class="hljs-literal">false</span>,
+  <span class="hljs-title class_">ArrowRight</span>: <span class="hljs-literal">false</span>,
+};
+
+<span class="hljs-variable language_">window</span>.<span class="hljs-title function_">addEventListener</span>(<span class="hljs-string">&#x27;keydown&#x27;</span>, <span class="hljs-function">(<span class="hljs-params">event</span>) =&gt;</span> {
+  <span class="hljs-keyword">if</span> (keys.<span class="hljs-title function_">hasOwnProperty</span>(event.<span class="hljs-property">code</span>)) keys[event.<span class="hljs-property">code</span>] = <span class="hljs-literal">true</span>;
+});
+
+<span class="hljs-variable language_">window</span>.<span class="hljs-title function_">addEventListener</span>(<span class="hljs-string">&#x27;keyup&#x27;</span>, <span class="hljs-function">(<span class="hljs-params">event</span>) =&gt;</span> {
+  <span class="hljs-keyword">if</span> (keys.<span class="hljs-title function_">hasOwnProperty</span>(event.<span class="hljs-property">code</span>)) keys[event.<span class="hljs-property">code</span>] = <span class="hljs-literal">false</span>;
+});
+</code></pre>
+
+    </body>
+</html>

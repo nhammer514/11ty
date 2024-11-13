@@ -1,0 +1,40 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="../../css/style_notes.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.10.0/styles/tomorrow-night-bright.css">
+    </head>
+    <body>
+        <h2> Objects </h2>
+        <p><strong>Objects</strong> are constructs that hold data and functions.</p>
+<p>Here is a fun, game-like example of a function demostrates objects:</p>
+<pre class="hljs"><code class="language-js"><span class="hljs-comment">// The player has two hundred dollars.</span>
+<span class="hljs-keyword">var</span> playerMoney = <span class="hljs-number">200</span>;
+<span class="hljs-comment">// This function allows for the creation of items, as it returns an object.</span>
+<span class="hljs-keyword">function</span> <span class="hljs-title function_">createItem</span>(<span class="hljs-params">name, description, value</span>){
+    <span class="hljs-keyword">return</span>{
+        <span class="hljs-attr">name</span>: name,
+        <span class="hljs-attr">value</span>: value
+    };
+}
+<span class="hljs-comment">// Stores the object in this variable.</span>
+<span class="hljs-keyword">const</span> itemSoda = <span class="hljs-title function_">createItem</span>(<span class="hljs-string">&quot;Soda&quot;</span>, <span class="hljs-number">50</span>);
+<span class="hljs-comment">//The player buys the item, with its associated value subtracted from the player.</span>
+playerMoney -= itemSoda.<span class="hljs-property">value</span>; <span class="hljs-comment">// Return 150;</span>
+</code></pre>
+<p><strong>Classes</strong> are templates for JavaScript objects.</p>
+<p>Here is another version of the previous example that utilizes classes.</p>
+<pre class="hljs"><code class="language-js"><span class="hljs-keyword">var</span> playerMoney = <span class="hljs-number">200</span>;
+<span class="hljs-comment">// The following code-block is a blueprint for &quot;Item&quot; objects.</span>
+<span class="hljs-keyword">class</span> <span class="hljs-title class_">Item</span> {
+    <span class="hljs-title function_">constructor</span>(<span class="hljs-params">name, value</span>){
+        <span class="hljs-variable language_">this</span>.<span class="hljs-property">name</span> = name;
+        <span class="hljs-variable language_">this</span>.<span class="hljs-property">value</span> = value;
+    }
+};
+<span class="hljs-comment">// Creates a new object based off the item class, and stores it inside a variable.</span>
+<span class="hljs-keyword">const</span> itemSoda = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Item</span>(<span class="hljs-string">&quot;Soda&quot;</span>, <span class="hljs-number">50</span>)
+playerMoney -= itemSoda.<span class="hljs-property">value</span>; <span class="hljs-comment">// Return 150;</span>
+</code></pre>
+
+    </body>
+</html>

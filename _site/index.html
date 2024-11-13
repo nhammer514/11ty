@@ -11,11 +11,27 @@
      <meta http-equiv="X-UA-Compatible"
            content="ie=edge">
      <title></title>
-     <link rel="stylesheet" href="file/path/to/your/css.css">
+     <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
+      <div id="header">
+            <div>
+    <h1>JavaScript Notes</h1>
+</div>
 
-    
+<div style="position: absolute; right: 0; top: 40%">
+</div>
+      </div>
 
+      <div id="main">
+            <div id="body" class="panel contentList">
+                  <ul><li><a href="/notes/functions/" target="content">Functions</a></li><li><a href="/notes/closures/" target="content">Closures</a></li><li><a href="/notes/objects/" target="content">Objects</a></li><li><a href="/notes/variables/" target="content">Variables</a></li><li><a href="/notes/event_listeners/" target="content">Event Listeners</a></li><li><a href="/notes/nodeJS/" target="content">NodeJS</a></li></ul>
+
+            </div>
+
+            <div id="body" class="panel contentDisplay">
+                  <iframe name="content"></iframe> 
+            </div>
+      </div>
 </body>
 </html>
