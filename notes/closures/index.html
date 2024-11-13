@@ -1,0 +1,44 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="../../css/style_notes.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.10.0/styles/tomorrow-night-bright.css">
+    </head>
+    <body>
+        <h2> Closures </h2>
+        <p>A  <strong>closure</strong> is an <em>inner-function</em> that can locate variables found in the <em>outer-function's</em> scope.</p>
+<p>This example is a basic demostration of a closure.</p>
+<pre class="hljs"><code class="language-js"><span class="hljs-comment">// This is the outer-function. We will be using its parameter as reference.</span>
+<span class="hljs-keyword">const</span> createName = <span class="hljs-keyword">function</span>(<span class="hljs-params">first</span>) {
+    <span class="hljs-comment">// Now lets declare an inner-function</span>
+    <span class="hljs-keyword">return</span> <span class="hljs-keyword">function</span>(<span class="hljs-params">last</span>){
+        <span class="hljs-keyword">return</span> ( first + <span class="hljs-string">&quot; &quot;</span> +last );
+    };
+}
+firstName = <span class="hljs-title function_">createName</span>(<span class="hljs-string">&quot;John&quot;</span>); <span class="hljs-comment">// Stores the inner-function.</span>
+<span class="hljs-title function_">firstName</span>(<span class="hljs-string">&quot;Doe&quot;</span>) <span class="hljs-comment">// Outputs &quot;John Doe&quot;</span>
+</code></pre>
+<p>In this example, a closure is used to create a counter.</p>
+<pre class="hljs"><code class="language-js"><span class="hljs-comment">// An anonymous function called &#x27;createCounter&#x27; is created.</span>
+<span class="hljs-keyword">var</span> createCounter = <span class="hljs-keyword">function</span>(<span class="hljs-params">n</span>) {
+    <span class="hljs-comment">// The &#x27;n&#x27; parameter is stored in the &#x27;count&#x27; variable. The inner-function can call back to this.</span>
+    <span class="hljs-keyword">var</span> count = n;
+    <span class="hljs-comment">// Returns a newly declared function, and...</span>
+    <span class="hljs-keyword">return</span> <span class="hljs-keyword">function</span> <span class="hljs-title function_">counter</span>(<span class="hljs-params"></span>) {
+        <span class="hljs-comment">//... increments the &#x27;count&#x27; variable.</span>
+        <span class="hljs-keyword">return</span> count++;
+    };
+};
+<span class="hljs-keyword">const</span> counter = <span class="hljs-title function_">createCounter</span>(<span class="hljs-number">10</span>);
+<span class="hljs-title function_">counter</span>(); <span class="hljs-comment">// Returns 10</span>
+<span class="hljs-title function_">counter</span>(); <span class="hljs-comment">// Returns 11</span>
+<span class="hljs-title function_">counter</span>(); <span class="hljs-comment">// Returns 12</span>
+</code></pre>
+<p>The first return of <code>n</code> is not incremented because <code>n++</code>  is the postfixed increment operator. If we used a prefixed increment operator <code>++n</code>, then <code>n</code> would be incremented before the return.</p>
+<p>Here is another example of a counter that is more optimized.</p>
+<pre class="hljs"><code class="language-js"><span class="hljs-keyword">var</span> createCounter = <span class="hljs-keyword">function</span>(<span class="hljs-params">n</span>) {
+    <span class="hljs-keyword">return</span> <span class="hljs-function">()=&gt;</span> n++
+};
+</code></pre>
+
+    </body>
+</html>

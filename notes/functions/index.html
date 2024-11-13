@@ -1,0 +1,49 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="../../css/style_notes.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.10.0/styles/tomorrow-night-bright.css">
+    </head>
+    <body>
+        <h2> Functions </h2>
+        <p><strong>Basic Syntax:</strong> Standard way of writing functions.</p>
+<pre class="hljs"><code class="language-js"><span class="hljs-keyword">function</span> <span class="hljs-title function_">f</span>(<span class="hljs-params">a,b</span>){
+    <span class="hljs-keyword">const</span> sum = a + b;
+    <span class="hljs-keyword">return</span> sum;
+}
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-title function_">f</span>(<span class="hljs-number">1</span>,<span class="hljs-number">5</span>)); <span class="hljs-comment">// Returns 6</span>
+</code></pre>
+<p>You can use <code>...arg</code></p>
+<p><strong>Anonymous Syntax:</strong> Variable is name of function.</p>
+<pre class="hljs"><code class="language-js"><span class="hljs-keyword">var</span> f = <span class="hljs-keyword">function</span>(<span class="hljs-params">a,b</span>){
+    <span class="hljs-keyword">const</span> sum = a  + b;
+    <span class="hljs-keyword">return</span> sum;
+}
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-title function_">f</span>(<span class="hljs-number">1</span>,<span class="hljs-number">5</span>)); <span class="hljs-comment">// Returns 6</span>
+</code></pre>
+<p><strong>Immediately Invoked Function Expression (IIFE):</strong> This form of function syntax allows for the encapsulation of a variable within a new scope.</p>
+<pre class="hljs"><code class="language-js"><span class="hljs-keyword">const</span> result = (<span class="hljs-keyword">function</span>(<span class="hljs-params">a,b</span>){
+    <span class="hljs-keyword">const</span> sum = a + b;
+    <span class="hljs-keyword">return</span> sum;
+})(<span class="hljs-number">1</span>,<span class="hljs-number">5</span>);
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(result); <span class="hljs-comment">// Returns 6</span>
+</code></pre>
+<p><strong>Arrow Syntax:</strong> A way to declare functions. However, it is used in more unique circumstances.</p>
+<pre class="hljs"><code class="language-js"><span class="hljs-keyword">const</span> <span class="hljs-title function_">f</span> = (<span class="hljs-params">a, b</span>) =&gt; {
+    <span class="hljs-keyword">const</span> sum = a + b;
+    <span class="hljs-keyword">return</span> sum;
+};
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-title function_">f</span>(<span class="hljs-number">1</span>,<span class="hljs-number">5</span>)); <span class="hljs-comment">// Returns 6</span>
+</code></pre>
+<p>Arrow syntax is different from function syntax because:</p>
+<ul>
+<li>More minimalistic. Useful for single-line functions.</li>
+<li>No automatic hoisting. You can use the function after it was declared. Good for readability.</li>
+<li>Cannot be bound to <code>this</code>, <code>super</code>, and arguments can be used as a constructor.</li>
+</ul>
+<p><strong>Omit Return:</strong> Shorter option for writing functions. You can omit the <code>return</code> keyword.</p>
+<pre class="hljs"><code class="language-js"><span class="hljs-keyword">const</span> <span class="hljs-title function_">f</span> = (<span class="hljs-params">a, b</span>) =&gt; a + b;
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-title function_">f</span>(<span class="hljs-number">1</span>,<span class="hljs-number">5</span>)); <span class="hljs-comment">// Returns 6</span>
+</code></pre>
+
+    </body>
+</html>

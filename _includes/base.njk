@@ -11,11 +11,21 @@
      <meta http-equiv="X-UA-Compatible"
            content="ie=edge">
      <title></title>
-     <link rel="stylesheet" href="file/path/to/your/css.css">
+     <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
+      <div id="header">
+            {% include "layouts/header.html" %}
+      </div>
 
-    {{ content | safe }}
+      <div id="main">
+            <div id="body" class="panel contentList">
+                  {{ content | safe }}
+            </div>
 
+            <div id="body" class="panel contentDisplay">
+                  <iframe name="content"></iframe> 
+            </div>
+      </div>
 </body>
 </html>
